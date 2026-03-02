@@ -1,0 +1,38 @@
+
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.content {
+    display:flex;
+    justify-content: center;
+}
+
+.canvas {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 600px;
+    max-height: 600px;
+    height: 600px;
+}
+
+.canvas-row {
+    display: flex;
+    flex:1;
+}
+
+.canvas-square {
+    flex:1;
+    border: 1px solid;
+    border-color: black;
+}
