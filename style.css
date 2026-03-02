@@ -35,4 +35,6 @@
     flex:1;
     border: 1px solid;
     border-color: black;
+    background-color: black;
+    opacity: 0;
 }
