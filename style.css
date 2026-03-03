@@ -41,7 +41,15 @@ body {
 
 .canvas-options {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+.cacanvas-option {
+    display: flex;
     justify-content: center;
+    align-items: center;
     margin-right: 15px;
 }
 

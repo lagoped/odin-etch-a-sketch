@@ -17,8 +17,14 @@
                     <input type="number" id="grid-size" name="grid-size" min="16" max="64" value="16">
                 </div>
                 <div class="canvas-options">
-                    <label for="grid-size">Color randomizer : </label>
-                    <input type="checkbox" id="random-color" name="random-color">
+                    <div class="canvas-option">
+                        <label for="grid-size">Color randomizer : </label>
+                        <input type="checkbox" id="random-color" name="random-color">
+                    </div>
+                    <div class="canvas-option">
+                        <label for="color-intensity-slider">Intensity of the color : </label>
+                        <input type="range" id="color-intensity-slider" min="0.1" max="1" step="0.05" value="0.25">
+                    </div>
                 </div>
             </div>
             <div class="canvas-reset-button">

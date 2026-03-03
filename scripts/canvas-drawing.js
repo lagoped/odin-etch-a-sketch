@@ -1,5 +1,4 @@
 
-
 const canvas = document.getElementById("canvas");
 
 canvas.addEventListener("mouseover", draw);
@@ -10,13 +9,16 @@ function draw(event){
     if(event.target.classList.contains("canvas-square")){
         var opacity = event.target.style.opacity;
         const notAlreadyDrawn = (opacity == null || opacity == undefined || opacity == "0" || opacity == "");
-        
+
         if(notAlreadyDrawn && document.getElementById('random-color').checked){
             changeSquareColor(event);
         }
 
         if (opacity < 1) {
-            event.target.style.opacity = opacity ? (parseFloat(opacity) + 0.25) : 0.25;
+            const intensity = document.getElementById('color-intensity-slider').valueAsNumber ? document.getElementById('color-intensity-slider').valueAsNumber : 0.25;
+            console.log(intensity)
+
+            event.target.style.opacity = opacity ? (parseFloat(opacity) + intensity) : intensity;
         }
     }
 }
