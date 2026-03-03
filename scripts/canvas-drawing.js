@@ -1,17 +1,30 @@
-function changeSquareColor() {
 
-}
 
 const canvas = document.getElementById("canvas");
 
-canvas.addEventListener("mouseover", (event) => {
+canvas.addEventListener("mouseover", draw);
+canvas.addEventListener("click", draw);
+
+
+function draw(event){
     if(event.target.classList.contains("canvas-square")){
-        if (event.target.style.opacity < 1) {
-            var opacity = event.target.style.opacity;
+        var opacity = event.target.style.opacity;
+        const notAlreadyDrawn = (opacity == null || opacity == undefined || opacity == "0" || opacity == "");
+        
+        if(notAlreadyDrawn && document.getElementById('random-color').checked){
+            changeSquareColor(event);
+        }
+
+        if (opacity < 1) {
             event.target.style.opacity = opacity ? (parseFloat(opacity) + 0.25) : 0.25;
         }
     }
-});
+}
+
+function changeSquareColor(event) {
+    const randomColor = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substring(1, 7);
+    event.target.style.backgroundColor = randomColor;
+}
 
 
 function resetCanvas() {

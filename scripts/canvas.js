@@ -48,7 +48,6 @@ function getCurrentColumnId(colIndex) {
 }
 
 
-
 function createGridSquareElement(colIndex, rowIndex) {
     let squareContainer = document.createElement("div");
     squareContainer.id = getCurrentSquareId(colIndex, rowIndex);
