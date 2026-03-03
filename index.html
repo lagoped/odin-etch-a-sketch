@@ -11,8 +11,14 @@
 <body>
     <div class="body">
         <div class="header">
-            <div>
-                For selection of canvas dimension
+            <div class="canvas-resizing">
+                <div>
+                    For selection of canvas dimension
+                </div>
+                <div>
+                    <input type="number" id="grid-size" name="grid-size" min="16" max="64" value="16">
+                    <button onclick="resetCanvas()">Reset</button>
+                </div>
             </div>
             <div>
                 Some option here

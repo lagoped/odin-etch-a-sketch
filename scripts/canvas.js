@@ -1,26 +1,32 @@
-const defaultGridSize = 16;
-
-let gridSize = defaultGridSize;
+const DEFAULT_GRID_SIZE = 16;
 
 
+function createGrid(gridSize) {
+    cleanCanvas();
 
-function createGrid(){
-    for(let colIndex = 0; colIndex <= gridSize; colIndex++) {
-        createGridRow(colIndex)
+    for (let colIndex = 0; colIndex <= gridSize; colIndex++) {
+        createGridRow(colIndex, gridSize)
     }
 }
 
-function createGridRow(colIndex) {
+function createGridRow(colIndex, gridSize) {
     let canvas = document.getElementById("canvas");
-    const currentRowTest = createGridRowElement(colIndex);
-    console.log(currentRowTest);
+    const currentRow = createGridRowElement(colIndex);
 
-    for(let rowIndex = 0; rowIndex <= gridSize; rowIndex++) {
+    for (let rowIndex = 0; rowIndex <= gridSize; rowIndex++) {
         let square = createGridSquareElement(colIndex, rowIndex)
-        currentRowTest.append(square);
+        currentRow.append(square);
     }
 
-    canvas.append(currentRowTest);
+    canvas.append(currentRow);
+}
+
+function cleanCanvas() {
+    let canvas = document.getElementById("canvas");
+
+    while (canvas.firstChild) {
+        canvas.removeChild(canvas.firstChild);
+    }
 }
 
 
@@ -37,7 +43,7 @@ function createGridRowElement(colIndex) {
 }
 
 
-function getCurrentColumnId(colIndex){
+function getCurrentColumnId(colIndex) {
     return "canvas-column-" + colIndex;
 }
 
@@ -51,7 +57,7 @@ function createGridSquareElement(colIndex, rowIndex) {
     let square = document.createElement("div");
     square.classList.add("canvas-square");
 
-    
+
     squareContainer.appendChild(square);
 
     return squareContainer;
@@ -59,8 +65,8 @@ function createGridSquareElement(colIndex, rowIndex) {
 
 
 function getCurrentSquareId(colIndex, rowIndex) {
-    return "square-col-" + colIndex + "-row-" + rowIndex; 
+    return "square-col-" + colIndex + "-row-" + rowIndex;
 }
 
 
-createGrid();
+createGrid(DEFAULT_GRID_SIZE);

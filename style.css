@@ -1,4 +1,6 @@
-
+body {
+    background-color: lightseagreen;
+}
 
 .body {
     display: flex;
@@ -9,8 +11,25 @@
 .header {
     display: flex;
     justify-content: space-evenly;
+    margin: 25px;
+    margin-bottom: 50px;
 }
 
+.canvas-resizing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
 
 .content {
     display:flex;
@@ -20,10 +39,16 @@
 .canvas {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    width: 600px;
-    max-height: 600px;
-    height: 600px;
+    max-width: 635px;
+    width: 635px;
+    max-height: 635px;
+    height: 635px;
+    background-color: white;
+
+    border: 35px solid;
+    border-bottom: 100px solid;
+    border-style:ridge;
+    border-color:firebrick;
 }
 
 .canvas-row {
@@ -40,8 +65,6 @@
 
 .canvas-square {
     flex:1;
-    /* border: 1px solid;
-    border-color: black; */
     background-color: black;
     opacity: 0;
 }
