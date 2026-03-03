@@ -10,11 +10,10 @@ function changeSquareColor() {
 const canvas = document.getElementById("canvas");
 
 canvas.addEventListener("mouseover", (event) => {
-    //   event.target.style.backgroundColor = "black"; //TODO have a dynamical value to goes darker and darker?
-
-    console.log(event.target.style.opacity);
-    if (event.target.style.opacity < 1) {
-        console.log("update");
-        event.target.style.opacity += 0.05; //TODO not working like I expected
+    if(event.target.classList.contains("canvas-square")){
+        if (event.target.style.opacity < 1) {
+            var opacity = event.target.style.opacity;
+            event.target.style.opacity = opacity ? (parseFloat(opacity) + 0.15) : 0.1;
+        }
     }
 });

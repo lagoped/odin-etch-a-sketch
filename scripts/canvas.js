@@ -44,11 +44,17 @@ function getCurrentColumnId(colIndex){
 
 
 function createGridSquareElement(colIndex, rowIndex) {
+    let squareContainer = document.createElement("div");
+    squareContainer.id = getCurrentSquareId(colIndex, rowIndex);
+    squareContainer.classList.add("canvas-square-container");
+
     let square = document.createElement("div");
-    square.id = getCurrentSquareId(colIndex, rowIndex);
     square.classList.add("canvas-square");
 
-    return square;
+    
+    squareContainer.appendChild(square);
+
+    return squareContainer;
 }
 
 

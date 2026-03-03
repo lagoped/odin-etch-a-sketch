@@ -31,10 +31,17 @@
     flex:1;
 }
 
-.canvas-square {
+.canvas-square-container {
     flex:1;
+    display:flex;
     border: 1px solid;
     border-color: black;
+}
+
+.canvas-square {
+    flex:1;
+    /* border: 1px solid;
+    border-color: black; */
     background-color: black;
     opacity: 0;
 }
